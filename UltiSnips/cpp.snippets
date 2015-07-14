@@ -42,20 +42,36 @@ if (FILE *fp = fopen(${1:"filename"}, "r"))
 }
 endsnippet
 
-snippet map "std::map (map)"
-std::map<${1:key}, ${2:value}> map$0;
+snippet list "std::list (list)"
+std::list<${1:type}> ${0:list};
 endsnippet
 
-snippet vector "std::vector (v)"
-std::vector<${1:char}> v$0;
+snippet set "std::set (set)"
+std::list<${1:type}> ${0:set};
+endsnippet
+
+snippet map "std::map (map)"
+std::map<${1:key}, ${2:value}> ${0:map};
+endsnippet
+
+snippet vector "std::vector (vec)"
+std::vector<${1:char}> ${0:vec};
 endsnippet
 
 snippet array "boost::array (type, size)"
-boost::array<${1:int}, ${2:size}> v$0;
+boost::array<${1:int}, ${2:size}> ${0:array};
 endsnippet
 
 snippet tp "template <typename ..> (template)"
 template <typename ${1:_InputIter}>
+endsnippet
+
+snippet iter
+for (${1:std::vector}<${2:type}>::${3:const_iterator} ${4:it} = ${5:container}.begin();
+		$4 != $5.end(); ++$4)
+{
+	${6}
+}
 endsnippet
 
 # vim:ft=snippets:
