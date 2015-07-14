@@ -38,14 +38,14 @@ int main(int argc, char *argv[])
 endsnippet
 
 snippet for "for loop (for)"
-for (${2:ii} = 0; $2 < ${1:count}; ${3:++$2})
+for (${2:ii} = 0; $2 < ${1:count}; ${3:$2++})
 {
 	${VISUAL}${0}
 }
 endsnippet
 
 snippet fori "for int loop (fori)"
-for (${4:int} ${2:ii} = 0; $2 < ${1:count}; ${3:++$2})
+for (${4:int} ${2:ii} = 0; $2 < ${1:count}; ${3:$2++})
 {
 	${VISUAL}${0}
 }
@@ -87,6 +87,31 @@ endsnippet
 
 snippet fprintf "fprintf ..."
 fprintf(${1:stderr}, "${2:%s}\n"${2/([^%]|%%)*(%.)?.*/(?2:, :\);)/}$3${2/([^%]|%%)*(%.)?.*/(?2:\);)/}
+endsnippet
+
+snippet if
+if (${1:true})
+{
+	${0}
+}
+endsnippet
+
+snippet ife
+if (${1:true})
+{
+	${2}
+}
+else
+{
+	${0}
+}
+endsnippet
+
+snippet el
+else
+{
+	${0}
+}
 endsnippet
 
 snippet eli "else if .. (eli)"
